@@ -1,0 +1,92 @@
+% Dokumenteinstellungen
+% ======================================================================
+
+% Dokumentklasse (Schriftgröße 6, DIN A4, Artikel)
+\documentclass[6pt,a4paper]{scrartcl}
+
+% Pakete laden
+\usepackage[utf8]{inputenc}		% Zeichenkodierung: UTF-8 (für Umlaute)
+\usepackage[german]{babel}		% Deutsche Sprache
+\usepackage{multicol}			% Spaltenpaket
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{esint}				% erweiterte Integralsymbole
+\usepackage{wasysym}			% Blitz
+\usepackage{graphicx}
+
+\usepackage{tabulary}
+\usepackage{tabularx}			%Modifizierbare Spaltenbreite bei Tabellen
+
+
+\usepackage{tikz}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usepackage{pgfplots}
+
+\usepackage{hyperref}	%Dieses Paket wandelt alle internen Verlinkungen in klickbare Verweise um. Dazu gehören auch die Einträge im Inhaltsverzeichnis und im Abbildungsverzeichnis. Ein Klick auf einen entsprechenden Eintrag führt somit direkt in die entsprechende Stelle im Dokument.
+
+
+
+% Seitenlayout und Ränder:
+\usepackage{geometry}
+\geometry{a4paper,landscape, left=6mm,right=6mm, top=0mm, bottom=3mm,includeheadfoot}
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%Fusszeile
+\fancyfoot[L]{\footnotesize{\authorinfo}}
+\fancyfoot[C]{\footnotesize{\licence \quad $\rightarrow$ \href{https://github.com/HSR-Stud}{Github: HSR-Stud}}}
+\fancyfoot[R]{Stand: \today \qquad \qquad \qquad \qquad \thepage}
+
+\renewcommand{\headrulewidth}{0.0pt} %obere Linie ausblenden
+\renewcommand{\footrulewidth}{0.4pt} %untere Linie
+
+
+
+%strich zwischen Seiten   
+\setlength{\columnseprule}{0.4pt}
+
+% Schriftart SANS für bessere Lesbarkeit bei kleiner Schrift
+\renewcommand{\familydefault}{\sfdefault}
+
+%Zeilenabstand
+\usepackage{titlesec}
+
+\titlespacing*{\section}
+{0pt}{1ex plus 1ex minus .1ex}{1ex minus .1ex}
+%{0pt}{2ex plus 1ex minus .2ex}{1ex}
+\titlespacing*{\subsection}
+{0pt}{1ex plus 1ex minus .1ex}{1ex minus .1ex}
+\titlespacing*{\subsubsection}
+{0pt}{1ex plus 1ex minus .1ex}{1ex minus .1ex}
+
+\setlength{\parindent}{0em} 
+
+% Custom Commands
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\newcommand{\me}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\dme}[2]{\ensuremath{\left\{#1\,\vert\,#2 \right\}}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\newcommand{\un}[1]{\; \unit{#1} }
+\newcommand{\unf}[2]{\;\left[ \unitfrac{#1}{#2} \right]}
+\newcommand{\norm}[2][\relax]{\ifx#1\relax \ensuremath{\left\Vert#2\right\Vert}\else \ensuremath{\left\Vert#2\right\Vert_{#1}}\fi}
+\newcommand{\enbrace}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\nira}[1]{\ensuremath{\overset{n \rightarrow \infty}{\longrightarrow}}}
+\newcommand{\os}[2]{\ensuremath{\overset{#1}{#2}}}
+\makeatletter
+\newcommand{\Ra}[0]{\ensuremath{\Rightarrow}}
+\newcommand{\ra}[0]{\ensuremath{\rightarrow}}
+\newcommand{\gk}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\sprod}[2]{\ensuremath{%
+		\setbox0=\hbox{\ensuremath{#2}}
+		\dimen@\ht0
+		\advance\dimen@ by \dp0
+		\left\langle #1\rule[-\dp0]{0pt}{\dimen@},#2\right\rangle}}
+
+\newcommand{\tab}[1][1cm]{\hspace*{#1}}
+%Custom functions
+\DeclareMathOperator{\arccot}{arccot}
